@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .btn {
+      background: #bcced9;
+      border-radius: 26px;
+      height: 52px;
+      width: 119px;
+      color: white;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Atkinson Hyperlegible";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 32px;
+      text-align: center;
+
+      color: #fcfcfc;
+    }
+
+    .btn:hover {
+      background: #6395B8;
+    }
+
+    .d-none {
+      display: none !important;
+    }
+
+    .btn__big {
+      width: 256px;
+    }
+
+    .active {
+      background-color: #304859;
+    }
+
+    .whitebox {
+      background: #fcfcfc;
+      border-radius: 20px;
+      width: 100%;
+      padding: 56px;
+    }
+
+    .box {
+      width: 687px;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'Atkinson Hyperlegible';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      margin-top: 83px;
+    }
+  .row__width{
+    width: 600px; 
+    margin: 400px; 
+    margin-top: 83px;
+  }
+
+    .time {
+      margin-right: 50px;
+    }
+
+    .moves {
+      margin-right: 50px;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100vh;
+      background: #152938;
+    }
+
+    .startbutton {
+      width: 541px;
+      height: 70px;
+      background: #fda214;
+      border-radius: 35px;
+      border: none;
+      color: #fcfcfc;
+      margin-top: 49px;
+      top: calc(50% - 40px / 2 + 1px);
+      font-family: "Atkinson Hyperlegible";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      text-align: center;
+    }
+
+    .title {
+      font-family: "Atkinson Hyperlegible";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 50px;
+      top: calc(50% - 50px / 2 - 318.5px);
+      color: #fcfcfc;
+      margin-bottom: 78px;
+      margin-left: 250px;
+      margi-right: 250px;
+    }
+
+    h1 {
+      top: calc(50% - 25px / 2 - 34px);
+      font-family: "Atkinson Hyperlegible";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+      color: #7191a5;
+    }
+
+    h2 {
+      top: calc(50% - 25px / 2 - 34px);
+      font-family: "Atkinson Hyperlegible";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+      color: #7191a5;
+    }
+
+    h3 {
+      top: calc(50% - 25px / 2 - 34px);
+      font-family: "Atkinson Hyperlegible";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+      color: #7191a5;
+    }
+
+    .topheader {
+      display: flex;
+      align-items: center;
+      padding-top: 67px;
+    }
+
+    .topheadersvg {
+      width: 188.04px;
+      height: 70.85px;
+      left: 167px;
+      top: 67px;
+      color: #152938;
+    }
+
+    .main_btn {
+      border-radius: 26px;
+      width: 127px;
+      height: 52px;
+      border: none;
+      background: #f2f2f2;
+    }
+
+    .main_btn:hover {
+      background: #fda214;
+    }
+
+    .buttonstop {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 666px;
+    }
+
+    .circle {
+      background: #fda214;
+      border-radius: 41px;
+      width: 88px;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fcfcfc;
+      font-family: "Atkinson Hyperlegible";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 55px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      border: none;
+    }
+
+    .circle.visible {
+      background: #bcced9;
+    }
+
+    .circle.active {
+      background: #fda214;
+    }
+
+    .circle.hidden {
+      background: #304859;
+    }
+
+    .rectangle {
+      display: grid;
+      width: 572px;
+      grid-gap: 16px;
+      margin: auto;
+      margin-top: 91px;
+    }
+
+    .rect4x4 {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .rect6x6 {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .player {
+      width: 255px;
+      height: 72px;
+      background: #dfe7ec;
+      border-radius: 10px;
+      border: none;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .turn:after {
+      content: "";
+      position: absolute;
+      border: 20px solid orange;
+      border-left-color: transparent;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      top: -40px;
+      left: calc(50% - 20px);
+    }
+
+    .turn {
+      background: #fda214;
+      border-radius: 10px;
+      top: calc(50% - 22px / 2 + 9.5px);
+      font-family: "Atkinson Hyperlegible";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      color: #fcfcfc;
+    }
+
+
+    .numberplayers {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .playernumber {
+      top: calc(50% - 22px / 2);
+      font-family: "Atkinson Hyperlegible";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      color: #7191a5;
+      margin-right: 121px;
+    }
+
+    .score {
+      top: calc(50% - 40px / 2 + 1px);
+      font-family: "Atkinson Hyperlegible";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      text-align: right;
+      color: #304859;
+    }
+
+    .turn:before {
+      content: "current turn";
+      font-family: "Atkinson Hyperlegible";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 16px;
+      text-align: center;
+      letter-spacing: 5px;
+      color: #152938;
+      position: absolute;
+      top: 78px;
+      text-transform: uppercase;
+      left: 42px;
+    }
+
+    .turn * {
+      color: #fcfcfc;
+    }
+
+    .timercontainer {
+      width: 255px;
+      height: 60px;
+      background-color: #DFE7EC;
+      color: #7191A5;
+      display: flex;
+      align-items: space-between;
+
+    }
+
+    .number {
+      color: #304859;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="whitebox">
+        <h1>Select Theme</h1>
+        <div class="row" data-option="visualization">
+          <button class="btn btn__big active">Numbers</button>
+          <button class="btn btn__big">Icons</button>
+        </div>
+        <h2>Numbers of players</h2>
+        <div class="row" data-option="quantity">
+          <button class="btn active">1</button>
+          <button class="btn">2</button>
+          <button class="btn">3</button>
+          <button class="btn">4</button>
+        </div>
+        <h3>Grid Size</h3>
+        <div class="row" data-option="size">
+          <button class="btn btn__big active">4x4</button>
+          <button class="btn btn__big">6x6</button>
+        </div>
+        <button class="startbutton">Start Game</button>
+      </div>
+    </div>
+  </div>
+  <div class="game d-none">
+    <div class="topheader">
+      <svg class="topheadersvg" width="151" height="21" viewBox="0 0 151 21" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path id="memory" fill-rule="evenodd" clip-rule="evenodd"
+          d="M122.52 15.8523V8.08662C122.52 6.86483 122.913 5.98472 123.7 5.4463C124.487 4.90789 125.613 4.63868 127.08 4.63868C127.373 4.63868 127.64 4.64385 127.88 4.65421C128.12 4.66456 128.4 4.69045 128.72 4.73186V0.0103542C127.2 -0.0517709 125.907 0.165667 124.84 0.662668C123.773 1.15967 122.933 2.02942 122.32 3.27192L121.24 0.44523H116.44V15.8523H122.52ZM6.08 7.80706V15.8523H0V0.445232H5.32L6.08 2.49536C6.53333 1.91553 7.28 1.3564 8.32 0.817983C9.36 0.279565 10.6133 0.0103564 12.08 0.0103564C13.6533 0.0103564 14.9133 0.227794 15.86 0.66267C16.8067 1.09755 17.5067 1.73951 17.96 2.58855C18.7333 1.73951 19.7133 1.09755 20.9 0.66267C22.0867 0.227794 23.3733 0.0103564 24.76 0.0103564C27.2933 0.0103564 29.04 0.564306 30 1.6722C30.96 2.7801 31.44 4.37982 31.44 6.47137V15.8523H25.36V7.65175C25.36 6.92695 25.3067 6.26429 25.2 5.66374C25.0933 5.0632 24.8267 4.58173 24.4 4.21933C23.9733 3.85694 23.2667 3.67574 22.28 3.67574C21.0533 3.67574 20.16 4.01225 19.6 4.68527C19.04 5.35829 18.76 6.36783 18.76 7.71387V15.8523H12.64V7.65175C12.64 6.92695 12.5933 6.26429 12.5 5.66374C12.4067 5.0632 12.1533 4.58173 11.74 4.21933C11.3267 3.85694 10.64 3.67574 9.68 3.67574C8.42667 3.67574 7.51333 4.02778 6.94 4.73187C6.36667 5.43595 6.08 6.46102 6.08 7.80706ZM50.06 15.3863C48.5 15.9455 46.9067 16.225 45.28 16.225C43.1467 16.225 41.26 15.8989 39.62 15.2465C37.98 14.5942 36.7 13.6572 35.78 12.4354C34.86 11.2136 34.4 9.75365 34.4 8.05556C34.4 6.4196 34.8867 5.00107 35.86 3.79999C36.8333 2.5989 38.1267 1.66703 39.74 1.00436C41.3533 0.34169 43.12 0.0103564 45.04 0.0103564C47.2267 0.0103564 49.1 0.408993 50.66 1.20626C52.22 2.00354 53.4 3.10108 54.2 4.4989C55 5.89671 55.3333 7.50679 55.2 9.32913H40.52C40.6267 10.406 41.14 11.2136 42.06 11.752C42.98 12.2904 44 12.5596 45.12 12.5596C46.0533 12.5596 46.86 12.4509 47.54 12.2335C48.22 12.016 48.7467 11.7417 49.12 11.4103L53.96 12.7771C52.92 13.9574 51.62 14.8272 50.06 15.3863ZM49.56 6.53349H40.52C40.7067 5.47736 41.2467 4.71115 42.14 4.23486C43.0333 3.75856 44.0533 3.52042 45.2 3.52042C46.3733 3.52042 47.3867 3.7741 48.24 4.28145C49.0933 4.78881 49.5333 5.53948 49.56 6.53349ZM64.16 7.80706V15.8523H58.08V0.445232H63.4L64.16 2.49536C64.6133 1.91553 65.36 1.3564 66.4 0.817983C67.44 0.279565 68.6934 0.0103564 70.16 0.0103564C71.7334 0.0103564 72.9933 0.227794 73.94 0.66267C74.8867 1.09755 75.5867 1.73951 76.04 2.58855C76.8133 1.73951 77.7934 1.09755 78.98 0.66267C80.1667 0.227794 81.4534 0.0103564 82.84 0.0103564C85.3734 0.0103564 87.12 0.564306 88.08 1.6722C89.04 2.7801 89.52 4.37982 89.52 6.47137V15.8523H83.44V7.65175C83.44 6.92695 83.3867 6.26429 83.28 5.66374C83.1733 5.0632 82.9067 4.58173 82.48 4.21933C82.0534 3.85694 81.3467 3.67574 80.36 3.67574C79.1334 3.67574 78.24 4.01225 77.68 4.68527C77.12 5.35829 76.84 6.36783 76.84 7.71387V15.8523H70.72V7.65175C70.72 6.92695 70.6733 6.26429 70.58 5.66374C70.4867 5.0632 70.2334 4.58173 69.82 4.21933C69.4067 3.85694 68.72 3.67574 67.76 3.67574C66.5067 3.67574 65.5934 4.02778 65.02 4.73187C64.4467 5.43595 64.16 6.46102 64.16 7.80706ZM103 16.225C104.813 16.225 106.52 15.9351 108.12 15.3553C109.72 14.7754 111.013 13.8798 112 12.6684C112.987 11.4569 113.48 9.92967 113.48 8.08662C113.48 6.22287 112.987 4.69563 112 3.50489C111.013 2.31416 109.72 1.43406 108.12 0.864577C106.52 0.295097 104.813 0.0103564 103 0.0103564C101.16 0.0103564 99.44 0.295097 97.84 0.864577C96.24 1.43406 94.9467 2.31416 93.96 3.50489C92.9733 4.69563 92.48 6.22287 92.48 8.08662C92.48 9.92967 92.9733 11.4569 93.96 12.6684C94.9467 13.8798 96.24 14.7754 97.84 15.3553C99.44 15.9351 101.16 16.225 103 16.225ZM99.92 11.5346C100.747 12.2179 101.773 12.5596 103 12.5596C104.227 12.5596 105.247 12.2179 106.06 11.5346C106.873 10.8512 107.28 9.70188 107.28 8.08662C107.28 6.45066 106.86 5.30652 106.02 4.65421C105.18 4.0019 104.173 3.67574 103 3.67574C101.8 3.67574 100.78 4.0019 99.94 4.65421C99.1 5.30652 98.68 6.45066 98.68 8.08662C98.68 9.70188 99.0933 10.8512 99.92 11.5346ZM138 20.4185C136.987 20.7084 135.613 20.8533 133.88 20.8533H131.92V17.4365H133.12C134.027 17.4365 134.707 17.4054 135.16 17.3433C135.613 17.2811 135.967 17.131 136.22 16.8929C136.473 16.6547 136.707 16.2768 136.92 15.7591L129.32 0.44523H135.84L139.72 10.0746L143.52 0.44523H150.04L142.44 15.8523C141.8 17.1569 141.153 18.1716 140.5 18.8964C139.847 19.6212 139.013 20.1285 138 20.4185Z"
+          fill="#152938" />
+      </svg>
+
+      <div class="buttonstop">
+        <button id='restart' class="main_btn">Restart</button>
+        <button id='newgame' class="main_btn">New Game</button>
+      </div>
+    </div>
+    <div class="rectangle"></div>
+
+    <div class="row numberplayers">
+
+
+    </div>
+    <div class="row row__width">
+      <div class='timercontainer'>
+
+        <div class='time'>Time</div>
+        <div class="number" id='time'>0:00</div>
+      </div>
+      <div class='timercontainer'>
+        <div class="moves">Moves</div>
+        <div class="number" id='moves'>2</div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
