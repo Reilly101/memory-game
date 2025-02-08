@@ -1,3 +1,5 @@
+
+
 /**
  * @fileoverview This file contains the JavaScript code for a memory matching game.
  * It handles game logic, UI updates, and player management.
@@ -228,7 +230,7 @@ buttons.forEach((button) => {
 
 /**
  * Converts seconds into a mm:ss format.
- *
+ *s
  * @param {number} seconds - The total seconds.
  * @returns {string} The formatted time string.
  */
